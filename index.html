@@ -1,0 +1,208 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=0.0"> 
+    <title>Home - Personal Website</title> 
+    <link rel="stylesheet" href="style.css"> 
+  
+</head> 
+<body> 
+    <header> 
+        <h1>Welcome to My Personal Website</h1> 
+    </header> 
+  
+    <nav> 
+        <ul> 
+            <li><a href="index.html">HOME</a></li> 
+            <li class="dropdown"> 
+                <a href="#" class="dropbtn">ABOUT</a> 
+                <div class="dropdown-content"> 
+                    <a href="skills.html">Skills I'm Developing</a> 
+                    <a href="goals.html">My Goals as a Student</a> 
+                    <a href="funfacts.html">Fun Facts About Me</a> 
+                </div> 
+            </li> 
+  
+            <li><a href="gallery.html">GALLERY</a></li> 
+            <li><a href="contact.html">CONTACT</a></li> 
+            <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a> 
+  
+        </ul> 
+         
+    </nav> 
+    <section id="section2"></section> 
+     
+    <div class="slider"> 
+        <div class="slides"> 
+            <div class="slide"> 
+                <img src="images/1.jpg" alt="Image 1"> 
+                <div class="text-overlay"><h1>Welcome to my Webpage!</h1></div> 
+            </div> 
+            <div class="slide"> 
+                <img src="images/2.webp" alt="Image 2"> 
+                <div class="text-overlay"><h1>No thoughts, just tulips!</h1></div> 
+            </div> 
+            <div class="slide"> 
+                <img src="images/3.jpg" alt="Image 3"> 
+                <div class="text-overlay"><h1>Just a girl and her tulips!</h1></div> 
+            </div> 
+        </div> 
+    </div> 
+    <section id="drop"> 
+  
+        <h2>Fun Facts About Me</h2> 
+        <p>Welcome to my Fun Facts About Me! Here, you'll get a glimpse into my passions,interests, and the little quirks that make me who I am. </p> 
+     
+        <div class="funfact-container"> 
+            <div class="funfact-card"> 
+                <div class="funfact-inner"> 
+                    <div class="funfact-front"> 
+                        <p>Certified Crammer!</p> 
+                    </div> 
+                    <div class="funfact-back"> 
+                        <p>Can finish a project the night before it's due!</p> 
+                    </div> 
+                </div> 
+            </div> 
+            <div class="funfact-card"> 
+                <div class="funfact-inner"> 
+                    <div class="funfact-front"> 
+                        <p>Coffee Explorer!</p> 
+                    </div> 
+                    <div class="funfact-back"> 
+                        <p>Powered by 3-in-1 and late night reviews!</p> 
+                    </div> 
+                </div> 
+            </div> 
+            <div class="funfact-card"> 
+                <div class="funfact-inner"> 
+                    <div class="funfact-front"> 
+                        <p>Playlist for every Mood! </p> 
+                    </div> 
+                    <div class="funfact-back"> 
+                        <p>Study, Chill and breakdown playlist!</p> 
+                    </div> 
+                </div> 
+            </div> 
+            <div class="funfact-card"> 
+                <div class="funfact-inner"> 
+                    <div class="funfact-front"> 
+                        <p>Deadline Chaser! </p> 
+                    </div> 
+                    <div class="funfact-back"> 
+                        <p>Thrives under pressure!</p> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+  
+       <!-- See More Button --> 
+       <div class="see-more-container"> 
+        <a href="funfacts.html" class="see-more-button">See More Funfacts</a> 
+    </div> 
+    </section> 
+     
+    <div class="container"> 
+        <div class="image-section"> 
+            <img src="images/Necy (2).png" alt="Ton's Image"> 
+        </div> 
+        <div class="quote-section"> 
+            <h1>Hi, I'm Necy!</h1> 
+            <p>I'm a Bachelor of Science in Information Systems student passionate about technology, web development and digital innovation.
+                I'm currently developing my skills in programming, web design, information systems and problem-solving. I enjoy creating
+                projects that combine creativity and technology. My goal is to become a skilled Information Systems professional and use
+                technology to create useful solutions.
+
+            </p> 
+            <blockquote> 
+                "Learn today, create tomorrow and make a difference through technology." 
+            </blockquote> 
+        </div> 
+    </div> 
+     
+    <footer> 
+        <p>&copy; 2026 Necy S. Samillano. All rights reserved.</p> 
+    </footer> 
+    <div class="footer-divider"></div> <!-- Orange line --> 
+  
+    <!-- Lightbox Container --> 
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()"> 
+        <span class="close" onclick="event.stopPropagation(); closeLightbox()">&times;</span> 
+        <img class="lightbox-content" id="lightboxImage" src=""> 
+    </div> 
+  
+    <script> 
+        const slides = document.querySelector('.slides'); 
+        let index = 0; 
+        function showNextSlide() { 
+            index = (index + 1) % 3; 
+            slides.style.transform = 'translateX(' + (-index * 100) + '%)'; 
+        } 
+  
+        setInterval(showNextSlide, 3000); // Change slide every 3 seconds 
+  
+        function openLightbox(imageSrc) { 
+            const lightbox = document.getElementById('lightbox'); 
+            const lightboxImage = document.getElementById('lightboxImage'); 
+            lightboxImage.src = imageSrc; 
+            lightbox.style.display = 'block'; 
+  
+            // Hide header and nav 
+            document.querySelector('header').style.display = 'none'; // Hides the header 
+            document.querySelector('nav').style.display = 'none'; // Hides the nav 
+        } 
+  
+        function closeLightbox() { 
+            const lightbox = document.getElementById('lightbox'); 
+            lightbox.style.display = 'none'; 
+  
+            // Show header and nav 
+            document.querySelector('header').style.display = 'block'; // Shows the header 
+            document.querySelector('nav').style.display = 'flex'; // Shows the nav 
+        } 
+  
+        document.addEventListener('DOMContentLoaded', function () { 
+        const logoutButton = document.querySelector('.logout-button .dropbtn'); 
+        const logoutDropdown = document.querySelector('.logout-dropdown'); 
+  
+        // Toggle dropdown visibility on button click 
+        logoutButton.addEventListener('click', function () { 
+            logoutDropdown.style.display =  
+                logoutDropdown.style.display === 'block' ? 'none' : 'block'; 
+        }); 
+  
+        // Close dropdown if clicking outside of it 
+        window.addEventListener('click', function (event) { 
+            if (!event.target.matches('.dropbtn')) { 
+                if (logoutDropdown.style.display === 'block') { 
+                    logoutDropdown.style.display = 'none'; 
+                } 
+            } 
+        }); 
+    }); 
+  
+    </script> 
+  
+<script> 
+// Logout function with confirmation 
+function confirmLogout() { 
+    // Show a confirmation message to the user 
+    const confirmLogout = confirm("Are you sure you want to log out?"); 
+  
+    // If the user confirms, proceed with logging out 
+    if (confirmLogout) { 
+        // Mark the user as logged out in localStorage (if used) 
+        localStorage.removeItem('isLoggedIn'); // Or any other keys related to login credentials 
+  
+        // Redirect to the login page 
+        window.location.href = 'login.html'; 
+    } else { 
+        // If the user cancels, do nothing 
+        return; 
+    } 
+} 
+  
+</script> 
+</body> 
+</html>

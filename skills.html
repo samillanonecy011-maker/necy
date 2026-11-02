@@ -1,0 +1,142 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Skills I'm Developing</title> 
+    <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+    <header> 
+        <h1>Welcome to My Personal Website</h1> 
+    </header> 
+  
+    <nav> 
+        <ul> 
+            <li><a href="index.html">HOME</a></li> 
+            <li class="dropdown"> 
+                <a href="#" class="dropbtn">ABOUT</a> 
+                <div class="dropdown-content"> 
+                    <a href="skills.html">Skills I'm Developing</a> 
+                    <a href="goals.html">My Goals as a Student</a> 
+                    <a href="funfacts.html">Fun Facts About Me</a> 
+                </div> 
+            </li> 
+            <li><a href="gallery.html">GALLERY</a></li> 
+            <li><a href="contact.html">CONTACT</a></li> 
+            <a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a> 
+  
+        </ul> 
+    </nav> 
+  
+    <section id="section2"></section> 
+  
+    <section id="drop"> 
+        <h2>Skills I'm Developing</h2> 
+        <p>As an Information Technology student, i am continuously building skills that combine creativity, technology
+             and communication.</p> 
+    
+        <section id="skills"> 
+     
+            <div class="tab"> 
+                <button class="tablinks" onclick="openTab(event, 'IT')">Information Technology</button> 
+                <button class="tablinks" onclick="openTab(event, 'GraphicDesign')">Graphic Design</button> 
+                <button class="tablinks" onclick="openTab(event, 'PublicSpeaking')">Public Speaking</button> 
+                <button class="tablinks" onclick="openTab(event, 'ProblemSolving')">Problem Solving</button> 
+  
+            </div> 
+            <div id="IT" class="tabcontent"> 
+                <h3>Information Technology</h3> 
+                <ul> 
+                    <li>Building responsive websites using HTML, CSS and JavaScipt.</li> 
+                    <li>Learning how to create user-friendly and mobile-ready designs.</li> 
+                    <li>Exploring modern web design principles and accessibility.</li> 
+                </ul> 
+            </div> 
+            <div id="GraphicDesign" class="tabcontent" style="display:none;"> 
+                <h3>Graphic Design</h3> 
+                <ul> 
+
+                    <li>Designing layouts using Canva.</li> 
+                    <li>Learning color threory and visual hierarchy.</li> 
+                    <li>Creating aesthetic and balanced web graphics.</li> 
+                </ul> 
+            </div> 
+  
+            <div id="PublicSpeaking" class="tabcontent" style="display:none;"> 
+                <h3>Public Speaking</h3> 
+                <ul> 
+                    <li>Improving confidence in class presentations.</li> 
+                    <li>Learning to communicate ideas clearly and effectively.</li> 
+                    <li>Practicing active listening and collaboration.</li> 
+                </ul> 
+            </div> 
+  
+            <div id="ProblemSolving" class="tabcontent" style="display:none;"> 
+                <h3>Problem Solving and Critical Thinking</h3> 
+                <ul> 
+                    <li>Analyzing problems and finding creative solutions.</li> 
+                    <li>Applying logical thinking in coding and daily life.</li> 
+                   <li>Learning to stay calm and focused under pressure. </li>  
+  
+                </ul> 
+            </div> 
+  
+  
+  
+        </section> 
+    </section> 
+  
+    <footer> 
+        <p>&copy; 2026 Necy S. Samillano. All rights reserved.</p> 
+    </footer> 
+    <div class="footer-divider"></div> <!-- Orange line --> 
+  
+<script> 
+function openTab(evt, tabName) { 
+    // Get all tab content elements 
+    const tabcontents = document.getElementsByClassName("tabcontent"); 
+    // Hide all tab content 
+    for (let i = 0; i < tabcontents.length; i++) { 
+        tabcontents[i].style.display = "none"; 
+    } 
+  
+    // Remove "active" class from all tab links 
+    const tablinks = document.getElementsByClassName("tablinks"); 
+    for (let i = 0; i < tablinks.length; i++) { 
+        tablinks[i].classList.remove("active"); 
+    } 
+  
+    // Show the current tab 
+    document.getElementById(tabName).style.display = "block"; 
+    evt.currentTarget.classList.add("active"); 
+} 
+  
+// Initially show the first tab content 
+document.addEventListener("DOMContentLoaded", function() { 
+    document.querySelector('.tablinks').click(); // Simulates a click on the first tab 
+}); 
+</script> 
+  
+  
+<script> 
+    // Logout function with confirmation 
+    function confirmLogout() { 
+        // Show a confirmation message to the user 
+        const confirmLogout = confirm("Are you sure you want to log out?"); 
+     
+        // If the user confirms, proceed with logging out 
+        if (confirmLogout) { 
+            // Mark the user as logged out in localStorage (if used) 
+localStorage.removeItem('isLoggedIn'); // Or any other keys related to login 
+// credentials 
+// Redirect to the login page 
+window.location.href = 'login.html'; 
+} else { 
+// If the user cancels, do nothing 
+return; 
+} 
+} 
+</script> 
+</body> 
+</html>
